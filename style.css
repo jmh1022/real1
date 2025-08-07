@@ -1,0 +1,147 @@
+
+/* Custom CSS to complement Bootstrap and Tailwind */
+
+.card {
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.number-badge {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 6px 20px rgba(72, 187, 120, 0.3);
+    transition: all 0.3s ease;
+    animation: bounceIn 0.6s ease;
+}
+
+.number-badge:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(72, 187, 120, 0.5);
+}
+
+.result-container.show {
+    animation: slideInUp 0.5s ease;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-10deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05) rotate(2deg);
+    }
+    70% {
+        transform: scale(0.9) rotate(-1deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.card-header:hover::before {
+    left: 100%;
+}
+
+/* SweetAlert2 Custom Styling */
+.swal2-popup {
+    border-radius: 20px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2) !important;
+}
+
+.swal2-title {
+    color: #4a5568 !important;
+    font-weight: 700 !important;
+}
+
+.swal2-confirm {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 12px 30px !important;
+    font-weight: 600 !important;
+}
+
+.swal2-confirm:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .number-badge {
+        width: 60px;
+        height: 60px;
+        font-size: 1.3rem;
+    }
+    
+    .card-body {
+        padding: 2rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .number-badge {
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem !important;
+    }
+}
